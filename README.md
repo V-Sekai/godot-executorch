@@ -54,7 +54,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Godot ExecuTorch Module **WORK IN PROGRESS**
+# Godot ExecuTorch Module
 
 This project is currently in **early development** and is **NOT ready for
 production use**.
