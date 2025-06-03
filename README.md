@@ -5,6 +5,7 @@
 [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Godot ExecuTorch Module](#godot-executorch-module)
+  - [⚠️ **WARNING: EXPERIMENTAL PROJECT - NOT READY FOR PRODUCTION** ⚠️](#-warning-experimental-project---not-ready-for-production-)
   - [Overview](#overview)
   - [Installation](#installation)
     - [Building the Module into Godot](#building-the-module-into-godot)
@@ -65,6 +66,29 @@
 
 A native C++ module for Godot Engine that provides ExecuTorch machine learning
 inference capabilities with built-in MCP (Model Context Protocol) support.
+
+## ⚠️ **WARNING: EXPERIMENTAL PROJECT - NOT READY FOR PRODUCTION** ⚠️
+
+> **🚧 WORK IN PROGRESS 🚧**
+>
+> This project is currently in **early development** and is **NOT ready for
+> production use**.
+>
+> **Current Status:**
+>
+> - 🔴 **API is unstable** and subject to breaking changes
+> - 🔴 **Limited testing** - may contain bugs and memory leaks
+> - 🔴 **Incomplete features** - many planned features are not implemented
+> - 🔴 **No official releases** - use at your own risk
+> - 🔴 **Documentation may be outdated** or incorrect
+>
+> **Do not use this in:**
+>
+> - Production games or applications
+> - Commercial projects
+> - Critical systems
+>
+> **This is for experimentation and development only!**
 
 ## Overview
 

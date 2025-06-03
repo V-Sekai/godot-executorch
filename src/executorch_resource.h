@@ -21,7 +21,7 @@ class ExecuTorchMemoryManager;
 
 /**
  * ExecuTorchResource - A Godot Resource for .pte (PyTorch ExecuTorch) files
- * 
+ *
  * This resource class provides both high-level and low-level APIs for ExecuTorch models:
  * - High-level: Simple forward() method using ExecuTorch Module class
  * - Low-level: Direct memory management and placement control
@@ -45,17 +45,17 @@ private:
     PackedByteArray model_data_;
     String source_file_path_;
     bool is_loaded_;
-    
+
     // ExecuTorch components
     std::unique_ptr<ExecuTorchModule> module_;
     std::unique_ptr<ExecuTorchMemoryManager> memory_manager_;
-    
+
     // Configuration
     MemoryPolicy memory_policy_;
     OptimizationLevel optimization_level_;
     int64_t memory_limit_bytes_;
     bool enable_profiling_;
-    
+
     // Model metadata
     Array input_names_;
     Array output_names_;
@@ -63,7 +63,7 @@ private:
     Dictionary output_shapes_;
     String model_name_;
     String model_version_;
-    
+
     // Performance tracking
     mutable double last_inference_time_ms_;
     mutable int total_inferences_;
@@ -76,16 +76,16 @@ public:
     virtual Error load_from_file(const String& path);
     virtual Error save_to_file(const String& path);
     virtual void clear();
-    
+
     // High-level API (using ExecuTorch Module class)
     Dictionary forward(const Dictionary& inputs);
     Array forward_array(const Array& input_data);
-    
+
     // Low-level API (direct ExecuTorch control)
     Error configure_memory(MemoryPolicy policy, int64_t limit_bytes = 0);
     Error set_optimization_level(OptimizationLevel level);
     Error enable_profiling(bool enable);
-    
+
     // Model metadata
     Array get_input_names() const { return input_names_; }
     Array get_output_names() const { return output_names_; }
@@ -93,14 +93,14 @@ public:
     Dictionary get_output_shapes() const { return output_shapes_; }
     String get_model_name() const { return model_name_; }
     String get_model_version() const { return model_version_; }
-    
+
     // Status and diagnostics
     bool is_loaded() const { return is_loaded_; }
     int64_t get_model_size() const { return model_data_.size(); }
     double get_last_inference_time() const { return last_inference_time_ms_; }
     int get_total_inferences() const { return total_inferences_; }
     Dictionary get_memory_info() const;
-    
+
     // Data access
     PackedByteArray get_model_data() const { return model_data_; }
     void set_model_data(const PackedByteArray& data);
@@ -125,18 +125,18 @@ private:
     bool is_loaded_;
     String file_path_;
     void* native_module_; // Actual ExecuTorch Module pointer
-    
+
 public:
     ExecuTorchModule();
     ~ExecuTorchModule();
-    
+
     // High-level interface matching ExecuTorch C++ Module class
     Error load(const String& file_path);
     Error load_from_buffer(const PackedByteArray& buffer);
     Dictionary forward(const Dictionary& inputs);
     void unload();
     bool is_loaded() const { return is_loaded_; }
-    
+
     // Metadata access
     Array get_method_names() const;
     Dictionary get_method_meta(const String& method_name = "forward") const;
@@ -151,21 +151,21 @@ private:
     void* memory_pool_;
     size_t pool_size_;
     bool is_static_allocation_;
-    
+
 public:
     ExecuTorchMemoryManager();
     ~ExecuTorchMemoryManager();
-    
+
     // Memory configuration
     Error configure_static_memory(size_t pool_size);
     Error configure_dynamic_memory();
     Error configure_custom_allocator(void* allocator);
-    
+
     // Memory monitoring
     Dictionary get_memory_stats() const;
     size_t get_allocated_bytes() const;
     size_t get_available_bytes() const;
-    
+
     // Memory operations
     void* allocate(size_t size, size_t alignment = 16);
     void deallocate(void* ptr);
