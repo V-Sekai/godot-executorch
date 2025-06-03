@@ -1,7 +1,7 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Godot ExecuTorch Module](#godot-executorch-module)
+- [Godot ExecuTorch Module **WORK IN PROGRESS**](#godot-executorch-module-work-in-progress)
   - [Overview](#overview)
   - [Installation](#installation)
   - [Usage in Godot](#usage-in-godot)
@@ -54,12 +54,10 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**WORK IN PROGRESS**
+# Godot ExecuTorch Module **WORK IN PROGRESS**
 
 This project is currently in **early development** and is **NOT ready for
 production use**.
-
-# Godot ExecuTorch Module
 
 A native C++ module for Godot Engine that provides ExecuTorch machine learning
 inference capabilities with built-in MCP (Model Context Protocol) support.
