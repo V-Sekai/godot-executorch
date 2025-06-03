@@ -2,11 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 - [Godot ExecuTorch Module](#godot-executorch-module)
-  - [WORK IN PROGRESS](#work-in-progress)
   - [Overview](#overview)
   - [Installation](#installation)
-    - [Building the Module into Godot](#building-the-module-into-godot)
-    - [Alternative: Development Setup](#alternative-development-setup)
   - [Usage in Godot](#usage-in-godot)
     - [Basic Setup](#basic-setup)
     - [Running Inference](#running-inference)
@@ -17,7 +14,6 @@
     - [Class Hierarchy](#class-hierarchy)
   - [Module Integration Benefits](#module-integration-benefits)
   - [Development](#development)
-    - [Building for Different Platforms](#building-for-different-platforms)
     - [Testing the Module](#testing-the-module)
   - [Deployment](#deployment)
   - [Troubleshooting](#troubleshooting)
@@ -55,19 +51,18 @@
     - [Inference Speed](#inference-speed)
     - [Platform Support](#platform-support)
   - [Future Enhancements](#future-enhancements)
-  - [License](#license-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+**WORK IN PROGRESS**
+
+This project is currently in **early development** and is **NOT ready for
+production use**.
 
 # Godot ExecuTorch Module
 
 A native C++ module for Godot Engine that provides ExecuTorch machine learning
 inference capabilities with built-in MCP (Model Context Protocol) support.
-
-## WORK IN PROGRESS
-
-This project is currently in **early development** and is **NOT ready for
-production use**.
 
 **Current Status:**
 
@@ -92,37 +87,6 @@ GDExtension), providing seamless access to ExecuTorch models from within Godot
 projects.
 
 ## Installation
-
-### Building the Module into Godot
-
-1. **Clone/Copy the module into Godot's modules directory:**
-
-   ```bash
-   cd /path/to/godot/source
-   cp -r /path/to/godot_executorch_module modules/executorch
-   ```
-
-2. **Build Godot with the module:**
-
-   ```bash
-   # Build for your target platform
-   scons platform=linuxbsd target=template_debug
-   # or
-   scons platform=windows target=template_debug
-   # or
-   scons platform=osx target=template_debug
-   ```
-
-3. **The module will be built into the Godot binary automatically**
-
-### Alternative: Development Setup
-
-For development, you can also build just the module:
-
-```bash
-cd godot_executorch_module
-g++ -std=c++17 -fPIC -shared *.cpp -o libexecutorch_module.so
-```
 
 ## Usage in Godot
 
@@ -233,32 +197,6 @@ Compared to GDExtension, the C++ module approach provides:
 - **Reduced Dependencies**: No external .so/.dll files needed
 
 ## Development
-
-### Building for Different Platforms
-
-**Linux:**
-
-```bash
-scons platform=linuxbsd target=template_debug
-```
-
-**Windows:**
-
-```bash
-scons platform=windows target=template_debug
-```
-
-**macOS:**
-
-```bash
-scons platform=osx target=template_debug
-```
-
-**Android:**
-
-```bash
-scons platform=android target=template_debug android_arch=arm64v8
-```
 
 ### Testing the Module
 
@@ -596,8 +534,3 @@ This implementation is designed for ExecuTorch v0.1+ and supports:
 - **Streaming**: Large model streaming and paging
 - **Batch Processing**: Multi-sample inference batching
 - **Custom Operators**: Easy registration of custom ops
-
-## License
-
-This implementation follows the ExecuTorch and Godot Engine licensing terms.
-Ensure compatibility for commercial use.
